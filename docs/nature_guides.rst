@@ -40,7 +40,7 @@ The Excel file containing the image licences has to be named ``Image_Licences.xl
 
 1.2 Nature Guide Excel
 ----------------------
-You can download an example :download:`here <files/Identify trees.xlsx>`.
+You can download an example :download:`here <_static/Identify trees.xlsx>`.
 
 **Important: all content you put into your Excel files has to be in the primary language of your Local Cosmos App**
 
