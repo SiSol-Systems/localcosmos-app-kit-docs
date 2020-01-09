@@ -20,8 +20,8 @@ To import an identification key from Excel, you need the following skills:
 
 You have to create two Excel files:
 
-# excel file containing the Nature Guide
-# excel file containing image licences
+1. excel file containing the Nature Guide
+2. excel file containing image licences
 
 Naming the Excel files
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -51,31 +51,25 @@ The Nature Guide Excel requires at exactly one sheet named ``Tree``. This sheet 
 
 **Columns of the Tree sheet**
 
-Column A: Node Name
-"""""""""""""""""""
+**Column A: Node Name**
 A Node is a leveled entry in the identification tree and can have any name. It can be something like ``Conifers``, ``Whales`` or even ``Stones``. It does not have to be a biological taxon. 
 
 
-Column B: Parent Node
-"""""""""""""""""""""
+**Column B: Parent Node**
 The parent of the node. If empty, this node will be displayed on the first identification step. If a Parent Node is specified, this node will appear after the user selected the specified Parent Node.
 
 
-Column C: Taxonomic Source
-""""""""""""""""""""""""""
+**Column C: Taxonomic Source**
 The columns ``Taxonomic Source`` and ``Scientific Name`` only should be filled if the node is an identification result.
-
 
 Currently, only two taxonomic sources are available, **Catalogue Of Life** and **Custom taxonomy**. Therefore, this cell has to be filled with ``taxonomy.sources.col`` (recommended) or ``taxonomy.sources.custom``, if you supply a custom taxonomy. Leave empty if you node is not a biological taxon or if you do not want to use taxonomic features.
 
 
-Column D: Scientific Name
-"""""""""""""""""""""""""
+**Column D: Scientific Name**
 The columns ``Taxonomic Source`` and ``Scientific Name`` only should be filled if the node is an identification result. Fill in a scientific name **without author** into this cell. Example: ``Lacerta agilis``.
 
 
-Column E: Decision Rule
-"""""""""""""""""""""""
+**Column E: Decision Rule**
 A ``Decision Rule`` is a rule when to decide to choose this taxon or information how to identify it. Decision Rules are optional and make sense if you do not want to use a trait based itentification for this level of the identification tree.
 
 
