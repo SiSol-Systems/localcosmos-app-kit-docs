@@ -6,7 +6,7 @@ Nature Guides are identification keys or species lists.
 
 1. Import from Excel
 ====================
-To import an identification key from Excel, you need the following skills:
+To create an importable identification key, you need the following skills:
 
 * creating folders
 * basic Excel, working with multiple spreadsheets, cell contents and cell backgrounds
@@ -20,13 +20,13 @@ To import an identification key from Excel, you need the following skills:
 
 You have to create two Excel files:
 
-1. excel file containing the Nature Guide
-2. excel file containing image licences
+1. excel file containing the Nature Guide, named exaclty like you named your Nature Guide on localcosmos.org
+2. excel file containing image licences, named *Image Licences.xlsx*
 
 Naming the Excel file
 ^^^^^^^^^^^^^^^^^^^^^
 
-The import will only succeed if you named your Excel file correctly. The name of the Excel file containing the Nature Guide has to match the name of the Nature Guide you created on localcosmos.org.
+The import will only succeed if you name your Excel files correctly. The name of the Excel file containing the Nature Guide has to match the name of the Nature Guide you created on localcosmos.org.
 
 +------------------------------------------+-------------------------------+
 | Name of Nature Guide on localcosmos.org  | Name of Excel file            |
@@ -35,7 +35,7 @@ The import will only succeed if you named your Excel file correctly. The name of
 |                                          | ``Identify trees.xlsx``       |
 +------------------------------------------+----------------------------- -+
 
-The Excel file containing the image licences has to be named ``Image_Licences.xlsx`` or ``Image_Licences.xls``.
+The Excel file containing the image licences has to be named ``Image_Licences.xlsx``.
 
 
 1.2 Nature Guide Excel
@@ -47,7 +47,7 @@ Before you continue to read, it is recommended to download the example Excel fil
 The Tree sheet
 ^^^^^^^^^^^^^^
 
-The Nature Guide Excel requires at exactly one sheet named ``Tree``. This sheet defines the identification tree. A tree with only one level would result in a simple species list. Each line of this sheet equals one entry in the identification tree - except the first one which defines the columns.
+The Nature Guide Excel requires at exactly one sheet named ``Tree``. This sheet defines the identification tree. A tree with only one level (= no Parent Nodes) would result in a simple species list. Each line of this sheet equals one entry in the identification tree - except the first one which defines the columns.
 
 **Example: Sheet "Tree" of "Identify Trees.xlsx":**
 
@@ -94,7 +94,7 @@ Currently, only two taxonomic sources are available, **Catalogue Of Life** and *
 
 **Column D: Scientific Name**
 
-The columns ``Taxonomic Source`` and ``Scientific Name`` only should be filled if the node is an **identification result**. Fill in a scientific name **without author** into this cell. Example: ``Lacerta agilis``.
+The columns ``Taxonomic Source`` and ``Scientific Name`` only should be filled if the node is an **identification result**. Fill in a scientific name **without author** into this cell. Example: ``Larix decidua``.
 
 
 **Column E: Decision Rule**
@@ -118,23 +118,23 @@ Nodes are entered in Column A, Matrix Filters are entered from Column B onwards.
 
 **Example: Sheet "Matrix_Deciduous Trees" of "Identify Trees.xlsx":**
 
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-|   | A                 | B                        | C                        | D                   | E                | F                  |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 1 | *name of filter*  | Leaf structure           | Shape of the leaf        | Color of the bark   | Taxonomy         | Length of the leaf |
-+===+===================+==========================+==========================+=====================+==================+====================+
-| 2 | *trait type*      | DescriptiveTextAndImages | DescriptiveTextAndImages | Color               | Taxon            | Range              |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 3 | *unit*            |                          |                          |                     |                  | cm                 |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 4 | *step*            |                          |                          |                     |                  | 1                  |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 5 | Sycamore Maple    | side by side             | lobed                    | grey                |                  | 10-18              |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 6 | Silver birch      | alternating              | heart shaped             | white               |                  | 3.5-7              |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
-| 7 | Oak               | alternating              | lobed                    | brown | grey        |                  | 8-15               |
-+---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+|   | A                   | B                        | C                        | D                   | E                | F                  |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 1 | *name of filter* -> | Leaf structure           | Shape of the leaf        | Color of the bark   | Taxonomy         | Length of the leaf |
++===+=====================+==========================+==========================+=====================+==================+====================+
+| 2 | *trait type* ->     | DescriptiveTextAndImages | DescriptiveTextAndImages | Color               | Taxon            | Range              |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 3 | *unit* ->           |                          |                          |                     |                  | cm                 |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 4 | *step* ->           |                          |                          |                     |                  | 1                  |
++---+----------++---------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 5 | Sycamore Maple      | side by side             | lobed                    | grey                |                  | 10-18              |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 6 | Silver birch        | alternating              | heart shaped             | white               |                  | 3.5-7              |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 7 | Oak                 | alternating              | lobed                    | brown | grey        |                  | 8-15               |
++---+---------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
 
 
 Within the matrix sheet, the first 4 rows are used to define the matrix filters (=traits).
@@ -144,7 +144,7 @@ Within the matrix sheet, the first 4 rows are used to define the matrix filters 
 * row 3 (optional): unit, for example ``cm``
 * row 4: step of the Range. Only applies if row 2 (type) is ``Range``. Defines the step of the rendered slider. 
 
-Row 5 onwards are used to assign values to nodes. If you want to assign more than one value to a node, use the OR seprator ``|``. For example ``oval | wavy``.
+Row 5 onwards are used to assign values to nodes. If you want to assign more than one value to a node, use the OR seprator ``|``. For example ``brown | grey``, which stands for ``brown OR grey``.
 
 You can create one Matrix Sheet for each Parent Node, but no Matrix Sheet is required.
 
@@ -281,11 +281,11 @@ Only short licence names are allowed for the ``Licence`` Column. Available Licen
 +===+=======================================================+=============+==========================+==========================+
 | 2 | Tree/Deciduous Trees.jpg                              | CC0         | Pablo Picasso            |                          |
 +---+-------------------------------------------------------+-------------+--------------------------+--------------------------+
-| 3 | Tree/Conifers.jpgs                                    | CC BY       | Vincent van Gogh         | https://localcosmos.org  |
+| 3 | Tree/Conifers.jpg                                     | CC BY       | Vincent van Gogh         | https://localcosmos.org  |
 +---+-------------------------------------------------------+-------------+--------------------------+--------------------------+
-| 4 | Tree/Silver birch.jpg                                 |             | Claude Monet             |                          |
+| 4 | Tree/Silver birch.jpg                                 | CC BY-SA    | Claude Monet             |                          |
 +---+-------------------------------------------------------+-------------+--------------------------+--------------------------+
-| 4 | Tree/Matrix_Deciduous Trees/Leaf structure/lobed.jpg  |             | Claude Monet             |                          |
+| 4 | Tree/Matrix_Deciduous Trees/Leaf structure/lobed.jpg  | CC0         | Claude Monet             |                          |
 +---+-------------------------------------------------------+-------------+--------------------------+--------------------------+
 
 
