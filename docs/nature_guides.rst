@@ -49,6 +49,8 @@ The Tree sheet
 
 The Nature Guide Excel requires at exactly one sheet named ``Tree``. This sheet defines the identification tree. A tree with only one level would result in a simple species list. Each line of this sheet equals one entry in the identification tree - except the first one which defines the columns.
 
+**Example: Sheet "Tree" of "Identify Trees.xlsx":**
+
 +---+-----------------+-----------------+----------------------+---------------------+----------------------------+
 |   | A               | B               | C                    | D                   | E                          |
 +---+-----------------+-----------------+----------------------+---------------------+----------------------------+
@@ -65,6 +67,8 @@ The Nature Guide Excel requires at exactly one sheet named ``Tree``. This sheet 
 | 6 | Sycamore maple  | Deciduous Trees | taxonomy.sources.col | Acer pseudoplatanus |                            |
 +---+-----------------+-----------------+----------------------+---------------------+----------------------------+
 | 7 | Silver birch    | Deciduous Trees | taxonomy.sources.col | Betula pendula      |                            |
++---+-----------------+-----------------+----------------------+---------------------+----------------------------+
+| 8 | Oak             | Deciduous Trees | taxonomy.sources.col | Quercus robur       |                            |
 +---+-----------------+-----------------+----------------------+---------------------+----------------------------+
 
 
@@ -111,6 +115,27 @@ A matrix sheet is used to define an identification matrix for a specific level o
 In the example Excel file, a matrix sheet for all deciduous trees is used, and thus is named after the Parent Node ``Deciduous Trees``.
 
 Nodes are entered in Column A, Matrix Filters are entered from Column B onwards.
+
+**Example: Sheet "Matrix_Deciduous Trees" of "Identify Trees.xlsx":**
+
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+|   | A                 | B                        | C                        | D                   | E                | F                  |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 1 | *name of filter*  | Leaf structure           | Shape of the leaf        | Color of the bark   | Taxonomy         | Length of the leaf |
++===+===================+==========================+==========================+=====================+==================+====================+
+| 2 | *trait type*      | DescriptiveTextAndImages | DescriptiveTextAndImages | Color               | Taxon            | Range              |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 3 | *unit*            |                          |                          |                     |                  | cm                 |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 4 | *step*            |                          |                          |                     |                  | 1                  |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 5 | Sycamore Maple    | side by side             | lobed                    | grey                |                  | 10-18              |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 6 | Silver birch      | alternating              | heart shaped             | white               |                  | 3.5-7              |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+| 7 | Oak               | alternating              | lobed                    | brown | grey        |                  | 8-15               |
++---+-------------------+--------------------------+--------------------------+---------------------+------------------+--------------------+
+
 
 Within the matrix sheet, the first 4 rows are used to define the matrix filters (=traits).
 
@@ -159,6 +184,27 @@ The Colors Sheet is used to define colors. Column A sets the name of the color. 
 Taxonomic Filters Sheet
 ^^^^^^^^^^^^^^^^^^^^^^^
 This sheet has to be named ``Taxonomic Filters``, and your Excel file may only have one ``Taxonomic Filters`` sheet.
+
++---+-------------------+--------------------------+--------------------------+---------------------+
+|   | A                 | B                        | C                        | D                   |
++---+-------------------+--------------------------+--------------------------+---------------------+
+| 1 | Scientific names  | Taxonomic sources        | Matrices                 | Matrix Filter Name  |
++===+===================+==========================+==========================+=====================+
+| 2 | Fagaceae          | taxonomy.sources.col     | Matrix_Deciduous Trees   | Taxonomy            |
++---+-------------------+--------------------------+--------------------------+---------------------+
+| 3 | Sapindales        | taxonomy.sources.col     | Matrix_Deciduous Trees   | Taxonomy            |
++---+-------------------+--------------------------+--------------------------+---------------------+
+| 4 | Oleaceae          | taxonomy.sources.col     | Matrix_Deciduous Trees   | Taxonomy            |
++---+-------------------+--------------------------+--------------------------+---------------------+
+
+
+**Column A (Scientific Names)**: Scientific name of the taxon which will act as a filter.
+
+**Column B (Taxonomic sources)**: See "Columns of the tree sheet".
+
+**Column C (Matrices)**: The Matrix Sheet this taxonomic filter is used by.
+
+**Column D (Matrix Filter Name)**: The Name of the Matrix filter, has to match the name of the matrix filter in the references Tree Sheet.
 
 
 1.3 Images
