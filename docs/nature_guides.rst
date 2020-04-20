@@ -4,19 +4,9 @@ Nature Guides
 
 Nature Guides are identification keys or species lists.
 
-1. Import from Excel
-====================
-To create an importable identification key, you need the following skills:
 
-* creating folders
-* basic Excel, working with multiple spreadsheets, cell contents and cell backgrounds
-* basic understanding of tree structures
-* creating .xls or .xlsx files
-* creating .zip files
-* creating .jpg or .png images with specific dimensions
-
-1.1 The Excel Files
--------------------
+1. The Excel Files
+------------------
 
 You have to create two Excel files:
 
@@ -33,13 +23,13 @@ The import will only succeed if you name your Excel files correctly. The name of
 +==========================================+===============================+
 | Identify trees                           | ``Identify trees.xls`` or     |
 |                                          | ``Identify trees.xlsx``       |
-+------------------------------------------+----------------------------- -+
++------------------------------------------+-------------------------------+
 
 The Excel file containing the image licences has to be named ``Image_Licences.xlsx``.
 
 
-1.2 Nature Guide Excel
-----------------------
+2. Nature Guide Excel
+---------------------
 Before you continue to read, it is recommended to download the example Excel file. :download:`download example Excel file <_static/Identify trees.xlsx>`.
 
 **Important: all content you put into your Excel files has to be in the primary language of your Local Cosmos App**
@@ -209,8 +199,8 @@ This sheet has to be named ``Taxonomic Filters``, and your Excel file may only h
 **Column D (Matrix Filter Name)**: The Name of the Matrix filter, has to match the name of the matrix filter in the references Tree Sheet.
 
 
-1.3 Images
-----------
+3. Images
+---------
 You upload your Nature Guide as a ``.zip`` file. Within this ``.zip`` file, you can supply images for the following assets:
 
 * Nodes
@@ -238,8 +228,8 @@ For the example Excel file, you would have a folder structure similar to this:
 Each Tree Image has to be exactly 600px x 600px in dimensions. Each Matrix Filter Image has to be exactly 400px x 400px in dimensions.
 
 
-1.4 Image Licences Excel
-------------------------
+4. Image Licences Excel
+-----------------------
 You have to supply an image licence alongside its creator for all your images. The image licences are provided by the file ``Image Licences.xlsx``.
 :download:`download example Excel file <_static/Image Licences.xlsx>`.
 
@@ -289,8 +279,8 @@ Only short licence names are allowed for the ``Licence`` Column. Available Licen
 +---+-------------------------------------------------------+-------------+--------------------------+--------------------------+
 
 
-1.5 Uploading data
-------------------
+5. Uploading data
+-----------------
 All uploadable Nature Guides consist of the folder ``images``, the file ``<name_of_nature_guide>.xlsx``, and the file ``Image Licences.xlsx``. You have to create a ``.zip`` file containing these 3 items. After you have created your zip file, you can upload it in the localcosmos.org app kit.
 
 :download:`download example zip file <_static/Identify Trees.zip>`.

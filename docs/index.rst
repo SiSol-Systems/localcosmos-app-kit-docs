@@ -10,7 +10,9 @@ Welcome to LocalCosmos App Kit's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   basics
    nature_guides
+   glossary
    taxon_profiles
    themes
 
