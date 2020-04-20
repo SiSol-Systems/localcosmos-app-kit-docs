@@ -58,7 +58,7 @@ One or more synonyms of the term. Separated by the character "|". Synonyms are a
 The definition of the term.
 
 
-5. Uploading data
+3. Uploading data
 -----------------
 An uploadable ``Glossary.xlsx`` has to be compressed as a .zip file. The content of this .zip file is only the ``Glossary.xlsx`` file.
 
