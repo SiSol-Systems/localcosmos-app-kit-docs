@@ -8,14 +8,11 @@ Welcome to LocalCosmos App Kit's documentation!
 
 .. toctree::
    :maxdepth: 2
+   :glob:
    :caption: Contents:
 
-   basics
-   nature_guides
-   glossary
-   taxon_profiles
-   themes
-
+   frontends
+   import_from_excel
 
 Indices and tables
 ==================

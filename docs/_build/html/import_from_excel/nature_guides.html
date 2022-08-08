@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nature Guides &mdash; LocalCosmos App Kit  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> LocalCosmos App Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../frontends.html">Creating Frontends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../import_from_excel.html">Import from Excel</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LocalCosmos App Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Nature Guides</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/import_from_excel/nature_guides.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nature-guides">
+<h1>Nature Guides<a class="headerlink" href="#nature-guides" title="Permalink to this heading">¶</a></h1>
+<p>Nature Guides are identification keys or species lists.</p>
+<section id="the-excel-files">
+<h2>1. The Excel Files<a class="headerlink" href="#the-excel-files" title="Permalink to this heading">¶</a></h2>
+<p>You have to create two Excel files:</p>
+<ol class="arabic simple">
+<li><p>excel file containing the Nature Guide, named exaclty like you named your Nature Guide on localcosmos.org</p></li>
+<li><p>excel file containing image licences, named <em>Image Licences.xlsx</em></p></li>
+</ol>
+<section id="naming-the-excel-file">
+<h3>Naming the Excel file<a class="headerlink" href="#naming-the-excel-file" title="Permalink to this heading">¶</a></h3>
+<p>The import will only succeed if you name your Excel files correctly. The name of the Excel file containing the Nature Guide has to match the name of the Nature Guide you created on localcosmos.org.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name of Nature Guide on localcosmos.org</p></th>
+<th class="head"><p>Name of Excel file</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Identify trees</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Identify</span> <span class="pre">trees.xls</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Identify</span> <span class="pre">trees.xlsx</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The Excel file containing the image licences has to be named <code class="docutils literal notranslate"><span class="pre">Image_Licences.xlsx</span></code>.</p>
+</section>
+</section>
+<section id="nature-guide-excel">
+<h2>2. Nature Guide Excel<a class="headerlink" href="#nature-guide-excel" title="Permalink to this heading">¶</a></h2>
+<p>Before you continue to read, it is recommended to download the example Excel file. <a class="reference download internal" download="" href="../_downloads/7fed1472b48992a5ca5dc9ce7e08f392/Identify%20trees.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">example</span> <span class="pre">Excel</span> <span class="pre">file</span></code></a>.</p>
+<p><strong>Important: all content you put into your Excel files has to be in the primary language of your Local Cosmos App</strong></p>
+<section id="the-tree-sheet">
+<h3>The Tree sheet<a class="headerlink" href="#the-tree-sheet" title="Permalink to this heading">¶</a></h3>
+<p>The Nature Guide Excel requires at exactly one sheet named <code class="docutils literal notranslate"><span class="pre">Tree</span></code>. This sheet defines the identification tree. A tree with only one level (= no Parent Nodes) would result in a simple species list. Each line of this sheet equals one entry in the identification tree - except the first one which defines the columns.</p>
+<p><strong>Example: Sheet “Tree” of “Identify Trees.xlsx”:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 19%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>1</p></th>
+<th class="head"><p>Node Name</p></th>
+<th class="head"><p>Parent Node</p></th>
+<th class="head"><p>Taxonomic Source</p></th>
+<th class="head"><p>Scientific Name</p></th>
+<th class="head"><p>Decision Rule</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Deciduous Trees</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>with leaves, bare in winter</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Conifers</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>with needles</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Spruce</p></td>
+<td><p>Conifers</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Picea abies</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Larch</p></td>
+<td><p>Conifers</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Larix decidua</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Sycamore maple</p></td>
+<td><p>Deciduous Trees</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Acer pseudoplatanus</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Silver birch</p></td>
+<td><p>Deciduous Trees</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Betula pendula</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Oak</p></td>
+<td><p>Deciduous Trees</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Quercus robur</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="columns-of-the-tree-sheet">
+<h3>Columns of the Tree sheet<a class="headerlink" href="#columns-of-the-tree-sheet" title="Permalink to this heading">¶</a></h3>
+<p><strong>Column A: Node Name</strong></p>
+<p>A Node is a leveled entry in the identification tree and can have any name. It can be something like <code class="docutils literal notranslate"><span class="pre">Conifers</span></code>, <code class="docutils literal notranslate"><span class="pre">Whales</span></code> or even <code class="docutils literal notranslate"><span class="pre">Stones</span></code>. It does not have to be a biological taxon.</p>
+<p><strong>Column B: Parent Node</strong></p>
+<p>The parent node of this node. If empty, this node will be displayed on the first identification step. If a Parent Node is specified, this node will appear after the user selected the specified Parent Node.</p>
+<p><strong>Column C: Taxonomic Source</strong></p>
+<p>The columns <code class="docutils literal notranslate"><span class="pre">Taxonomic</span> <span class="pre">Source</span></code> and <code class="docutils literal notranslate"><span class="pre">Scientific</span> <span class="pre">Name</span></code> only should be filled if the node is an identification result.</p>
+<p>Currently, only two taxonomic sources are available, <strong>Catalogue Of Life</strong> and <strong>Custom taxonomy</strong>. Therefore, this cell has to be filled with <code class="docutils literal notranslate"><span class="pre">taxonomy.sources.col</span></code> (recommended) or <code class="docutils literal notranslate"><span class="pre">taxonomy.sources.custom</span></code>, if you supply a custom taxonomy. Leave empty if your node is not a biological taxon or if you do not want to use taxonomic features.</p>
+<p><strong>Column D: Scientific Name</strong></p>
+<p>The columns <code class="docutils literal notranslate"><span class="pre">Taxonomic</span> <span class="pre">Source</span></code> and <code class="docutils literal notranslate"><span class="pre">Scientific</span> <span class="pre">Name</span></code> only should be filled if the node is an <strong>identification result</strong>. Fill in a scientific name <strong>without author</strong> into this cell. Example: <code class="docutils literal notranslate"><span class="pre">Larix</span> <span class="pre">decidua</span></code>.</p>
+<p><strong>Column E: Decision Rule</strong></p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Decision</span> <span class="pre">Rule</span></code> is a rule when to decide to choose this taxon or information how to identify it. Decision Rules are optional and make sense if you do not want to use a trait based itentification for this level of the identification tree.</p>
+</section>
+<section id="matrix-sheets">
+<h3>Matrix Sheets<a class="headerlink" href="#matrix-sheets" title="Permalink to this heading">¶</a></h3>
+<p>A matrix sheet is used to define an identification matrix for a specific level of the identifcation tree. The level the matrix is used for is specified by a parent node. The name of the matrix sheet inside your Excel document has to be set accordingly.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name of Parent Node</p></th>
+<th class="head"><p>Name of Matrix Sheet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Deciduous Trees</p></td>
+<td><p>Matrix_Deciduous Trees</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the example Excel file, a matrix sheet for all deciduous trees is used, and thus is named after the Parent Node <code class="docutils literal notranslate"><span class="pre">Deciduous</span> <span class="pre">Trees</span></code>.</p>
+<p>Nodes are entered in Column A, Matrix Filters are entered from Column B onwards.</p>
+<p><strong>Example: Sheet “Matrix_Deciduous Trees” of “Identify Trees.xlsx”:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 8%" />
+<col style="width: 0%" />
+<col style="width: 7%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="3"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+<th class="head"><p>E</p></th>
+<th class="head"><p>F</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>1</p></th>
+<th class="head" colspan="3"><p><em>name of filter</em> -&gt;</p></th>
+<th class="head"><p>Leaf structure</p></th>
+<th class="head"><p>Shape of the leaf</p></th>
+<th class="head"><p>Color of the bark</p></th>
+<th class="head"><p>Taxonomy</p></th>
+<th class="head"><p>Length of the leaf</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>2</p></td>
+<td colspan="3"><p><em>trait type</em> -&gt;</p></td>
+<td><p>DescriptiveTextAndImages</p></td>
+<td><p>DescriptiveTextAndImages</p></td>
+<td><p>Color</p></td>
+<td><p>Taxon</p></td>
+<td><p>Range</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td colspan="3"><p><em>unit</em> -&gt;</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>cm</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td colspan="3"><p><em>step</em> -&gt;</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td colspan="3"><p>Sycamore Maple</p></td>
+<td><p>side by side</p></td>
+<td><p>lobed</p></td>
+<td><p>grey</p></td>
+<td></td>
+<td><p>10-18</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td colspan="3"><p>Silver birch</p></td>
+<td><p>alternating</p></td>
+<td><p>heart shaped</p></td>
+<td><p>white</p></td>
+<td></td>
+<td><p>3.5-7</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td colspan="3"><p>Oak</p></td>
+<td><p>alternating</p></td>
+<td><p>lobed</p></td>
+<td><p>brown | grey</p></td>
+<td></td>
+<td><p>8-15</p></td>
+</tr>
+</tbody>
+</table>
+<p>Within the matrix sheet, the first 4 rows are used to define the matrix filters (=traits).</p>
+<ul class="simple">
+<li><p>row 1: Name of the matrix filter (trait)</p></li>
+<li><p>row 2: Type of the matrix filter. Available matrix filter types are: <code class="docutils literal notranslate"><span class="pre">DescriptiveTextAndImages</span></code>, <code class="docutils literal notranslate"><span class="pre">Color</span></code>, <code class="docutils literal notranslate"><span class="pre">Range</span></code>, <code class="docutils literal notranslate"><span class="pre">Number</span></code>, <code class="docutils literal notranslate"><span class="pre">Taxon</span></code></p></li>
+<li><p>row 3 (optional): unit, for example <code class="docutils literal notranslate"><span class="pre">cm</span></code></p></li>
+<li><p>row 4: step of the Range. Only applies if row 2 (type) is <code class="docutils literal notranslate"><span class="pre">Range</span></code>. Defines the step of the rendered slider.</p></li>
+</ul>
+<p>Row 5 onwards are used to assign values to nodes. If you want to assign more than one value to a node, use the OR seprator <code class="docutils literal notranslate"><span class="pre">|</span></code>. For example <code class="docutils literal notranslate"><span class="pre">brown</span> <span class="pre">|</span> <span class="pre">grey</span></code>, which stands for <code class="docutils literal notranslate"><span class="pre">brown</span> <span class="pre">OR</span> <span class="pre">grey</span></code>.</p>
+<p>You can create one Matrix Sheet for each Parent Node, but no Matrix Sheet is required.</p>
+</section>
+<section id="matrix-filter-types">
+<h3>Matrix Filter Types<a class="headerlink" href="#matrix-filter-types" title="Permalink to this heading">¶</a></h3>
+<p><strong>DescriptiveTextAndImages</strong></p>
+<p>A text with an image. Suitable for traits like “Shape of the leaf”.</p>
+<p><strong>Color</strong></p>
+<p>Colors consist of a name and a color code. Both are defined in the <code class="docutils literal notranslate"><span class="pre">Colors</span> <span class="pre">Sheet</span></code>. In the Matrix Sheet you only reference colors by name, as defined in the <code class="docutils literal notranslate"><span class="pre">Colors</span> <span class="pre">Sheet</span></code>.</p>
+<p><strong>Range</strong></p>
+<p>A range of numbers, for example from 10cm to 50cm. You can define the step of the range in row 4. If the step is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the range slider, which the app user uses to select a value, would consist of the numbers 10, 11, 12, … 48, 49, 50.</p>
+<p><strong>Number</strong></p>
+<p>Numbers that are no ranges, for example the numbers 2,4,5,8.</p>
+<p><strong>Taxon</strong></p>
+<p>Taxonomic filters are defined in the <code class="docutils literal notranslate"><span class="pre">Taxonomic</span> <span class="pre">Filters</span> <span class="pre">Sheet</span></code>. You can only add a taxonomic filter, but you cannot assign values in the Matrix Sheet as you can with the other matrix filters. Taxonomic Filters work automatically using the taxonomic backend of your App.</p>
+</section>
+<section id="colors-sheet">
+<h3>Colors Sheet<a class="headerlink" href="#colors-sheet" title="Permalink to this heading">¶</a></h3>
+<p>The Colors Sheet is used to define colors. Column A sets the name of the color. Column B sets the actual color by using a cell background.</p>
+</section>
+<section id="taxonomic-filters-sheet">
+<h3>Taxonomic Filters Sheet<a class="headerlink" href="#taxonomic-filters-sheet" title="Permalink to this heading">¶</a></h3>
+<p>This sheet has to be named <code class="docutils literal notranslate"><span class="pre">Taxonomic</span> <span class="pre">Filters</span></code>, and your Excel file may only have one <code class="docutils literal notranslate"><span class="pre">Taxonomic</span> <span class="pre">Filters</span></code> sheet.</p>
+<p><strong>Example: Sheet “Taxonomic Filters” of “Identify Trees.xlsx”:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>1</p></th>
+<th class="head"><p>Scientific names</p></th>
+<th class="head"><p>Taxonomic sources</p></th>
+<th class="head"><p>Matrices</p></th>
+<th class="head"><p>Matrix Filter Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Fagaceae</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Matrix_Deciduous Trees</p></td>
+<td><p>Taxonomy</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Sapindales</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Matrix_Deciduous Trees</p></td>
+<td><p>Taxonomy</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Oleaceae</p></td>
+<td><p>taxonomy.sources.col</p></td>
+<td><p>Matrix_Deciduous Trees</p></td>
+<td><p>Taxonomy</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Column A (Scientific Names)</strong>: Scientific name of the taxon which will act as a filter.</p>
+<p><strong>Column B (Taxonomic sources)</strong>: See “Columns of the tree sheet”.</p>
+<p><strong>Column C (Matrices)</strong>: The Matrix Sheet this taxonomic filter is used by.</p>
+<p><strong>Column D (Matrix Filter Name)</strong>: The Name of the Matrix filter, has to match the name of the matrix filter in the references Tree Sheet.</p>
+</section>
+</section>
+<section id="images">
+<h2>3. Images<a class="headerlink" href="#images" title="Permalink to this heading">¶</a></h2>
+<p>You upload your Nature Guide as a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file. Within this <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file, you can supply images for the following assets:</p>
+<ul class="simple">
+<li><p>Nodes</p></li>
+<li><p>Matrix Filters of the type <code class="docutils literal notranslate"><span class="pre">DescriptiveTextAndImages</span></code></p></li>
+</ul>
+<p>All images have to reside in a folder called <code class="docutils literal notranslate"><span class="pre">images</span></code>. All images for Nodes have to reside in <code class="docutils literal notranslate"><span class="pre">images/Tree</span></code>. All images for matrix filters have to reside in the folder <code class="docutils literal notranslate"><span class="pre">images/Matrix_&lt;parent_node&gt;/&lt;matrix_filter_name&gt;/</span></code>, and the name of the image has to match the value.</p>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">images/Matrix_Deciduous</span> <span class="pre">Trees/Shape</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">leaf/heart</span> <span class="pre">shaped.jpg`</span></code></p>
+<p>For the example Excel file, you would have a folder structure similar to this:</p>
+<div class="line-block">
+<div class="line">nature_guide</div>
+<div class="line">├── Identify Trees.xlsx</div>
+<div class="line">├── images</div>
+<div class="line">│     ├── Tree</div>
+<div class="line">│     │     ├── Conifers.jpg</div>
+<div class="line">│     │     ├── Deciduous Trees.jpg</div>
+<div class="line">│     │     ├── Oak.jpg</div>
+<div class="line">│     │</div>
+<div class="line">│     ├── Matrix_Deciduous Trees</div>
+<div class="line">│     │     ├── Shape of the leaf</div>
+<div class="line">│     │     │   ├── heart shaped.jpg</div>
+</div>
+<p>Each Tree Image has to be exactly 600px x 600px in dimensions. Each Matrix Filter Image has to be exactly 400px x 400px in dimensions.</p>
+</section>
+<section id="image-licences-excel">
+<h2>4. Image Licences Excel<a class="headerlink" href="#image-licences-excel" title="Permalink to this heading">¶</a></h2>
+<p>You have to supply an image licence alongside its creator for all your images. The image licences are provided by the file <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Licences.xlsx</span></code>.
+<a class="reference download internal" download="" href="../_downloads/fffc4102c68ede1f3f388c496e132c8b/Image%20Licences.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">example</span> <span class="pre">Excel</span> <span class="pre">file</span></code></a>.</p>
+<p>You have to supply at least the columns <code class="docutils literal notranslate"><span class="pre">Image</span></code> (column A), <code class="docutils literal notranslate"><span class="pre">Licence</span></code> (column B) and <code class="docutils literal notranslate"><span class="pre">Creator</span></code> (column C). <code class="docutils literal notranslate"><span class="pre">Creator</span> <span class="pre">link</span></code> (column D) is optional.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Image</span></code> column expects paths to the image, relative to your <code class="docutils literal notranslate"><span class="pre">image</span></code> folder, where the images reside.</p>
+<p>Examples: <code class="docutils literal notranslate"><span class="pre">Tree/Conifers.jpg</span></code> or <code class="docutils literal notranslate"><span class="pre">Matrix_Deciduous</span> <span class="pre">Trees/Shape</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">leaf/heart_shaped.jpg</span></code>.</p>
+<p>Only short licence names are allowed for the <code class="docutils literal notranslate"><span class="pre">Licence</span></code> Column. Available Licences are:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Full Licence Name</p></th>
+<th class="head"><p>Short name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Public Domain Dedication</p></td>
+<td><p>CC0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Creative Commons Attribution</p></td>
+<td><p>CC BY</p></td>
+</tr>
+<tr class="row-even"><td><p>Creative Commons Attribution-ShareAlike</p></td>
+<td><p>CC BY-SA</p></td>
+</tr>
+<tr class="row-odd"><td><p>Creative Commons Attribution-NoDerivs</p></td>
+<td><p>CC BY-ND</p></td>
+</tr>
+<tr class="row-even"><td><p>Creative Commons Attribution-NonCommercial</p></td>
+<td><p>CC BY-NC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Creative Commons Attribution-NonCommercial-ShareAlike</p></td>
+<td><p>CC BY-NC-SA</p></td>
+</tr>
+<tr class="row-even"><td><p>Creative Commons Attribution-NonCommercial-NoDerivs</p></td>
+<td><p>CC BY-NC-ND</p></td>
+</tr>
+<tr class="row-odd"><td><p>Public Domain Mark</p></td>
+<td><p>PDM</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: Sheet “Image Licences” of “Identify Trees.xslx”:</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 45%" />
+<col style="width: 11%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>D</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>1</p></th>
+<th class="head"><p>Image</p></th>
+<th class="head"><p>Licence</p></th>
+<th class="head"><p>Creator</p></th>
+<th class="head"><p>Creator link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Tree/Deciduous Trees.jpg</p></td>
+<td><p>CC0</p></td>
+<td><p>Pablo Picasso</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tree/Conifers.jpg</p></td>
+<td><p>CC BY</p></td>
+<td><p>Vincent van Gogh</p></td>
+<td><p><a class="reference external" href="https://localcosmos.org">https://localcosmos.org</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Tree/Silver birch.jpg</p></td>
+<td><p>CC BY-SA</p></td>
+<td><p>Claude Monet</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Tree/Matrix_Deciduous Trees/Leaf structure/lobed.jpg</p></td>
+<td><p>CC0</p></td>
+<td><p>Claude Monet</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="uploading-data">
+<h2>5. Uploading data<a class="headerlink" href="#uploading-data" title="Permalink to this heading">¶</a></h2>
+<p>All uploadable Nature Guides consist of the folder <code class="docutils literal notranslate"><span class="pre">images</span></code>, the file <code class="docutils literal notranslate"><span class="pre">&lt;name_of_nature_guide&gt;.xlsx</span></code>, and the file <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Licences.xlsx</span></code>. You have to create a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file containing these 3 items. After you have created your zip file, you can upload it in the localcosmos.org app kit.</p>
+<p><a class="reference download internal" download="" href="../_downloads/f439f78450986e1c2495f0b7d8b115e6/Identify%20Trees.zip"><code class="xref download docutils literal notranslate"><span class="pre">download</span> <span class="pre">example</span> <span class="pre">zip</span> <span class="pre">file</span></code></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Thomas Uher.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
