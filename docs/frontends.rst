@@ -32,7 +32,7 @@ The :code:`www` folder will later represent your Apache Cordova www folder, cont
 
 localcosmos folder
 ------------------
-The localcosmos folder is the folder where the Local Cosmos App Kit will put all generated contents in.
+The :code:`localcosmos` folder is the folder where the Local Cosmos App Kit will put all generated contents in.
 Do not put anything into this folder by yourself, unless you are developing using test content.
 During the build phase of your App on Local Cosmos, this folder will be deleted, recreated andu auto-populated
 
@@ -85,7 +85,7 @@ The settings file of your app. The settings.json file has two functions:
 
 **Example settings.json file**
 
-.. code-block:: 
+.. code-block:: javascript
 
     {
         "frontend" : "FRONTEND_NAME",
@@ -241,14 +241,14 @@ Create a vue.js project
 -----------------------
 First we will create a folder which contains both the vue.js app and the apache cordova app.
 
-.. code-block::
+.. code-block:: console
 
     mkdir lcfrontend
     cd lcfrontend
 
 We will first create the vue.js app. Later, we will build it, and then move the build output to apache cordova.
 
-.. code-block::
+.. code-block:: console
 
     npm init vue@latest
 
@@ -258,7 +258,7 @@ in this case :code:`myfrontend-vue`.
 
 Next, run the following commands.
 
-.. code-block::
+.. code-block:: console
 
     cd myfrontend-vue
     npm install
@@ -275,14 +275,14 @@ Create the Cordova project
 
 First, install apache Cordova inside your :code:`lcfrontend` folder, not inside your :code:`myfrontend-vue` folder.
 
-.. code-block::
+.. code-block:: console
 
     cd lcfrontend
     npm install cordova
 
-of install cordova globally using
+or install cordova globally using
 
-.. code-block::
+.. code-block:: console
 
     npm install -g cordova
 
@@ -291,13 +291,13 @@ In this tutorial, we assume Cordova is installed locally in :code:`lcfrontend`. 
 
 Now, we will create a blank Cordova app. We use the name of the frontend, :code:`myfrontend`, for the cordova app:
 
-.. code-block:: 
+.. code-block:: console
 
     cordova create myfrontend org.localcosmos.myfrontend MyFrontend
 
 Cd into myfrontend, add the browser platform as well as the device plugin and run the cordova app.
 
-.. code-block::
+.. code-block:: console
 
     cd myfrontend
     ../node_modules/cordova/bin/cordova platform add browser
@@ -313,7 +313,7 @@ Copy cordova js over to your vue.js app
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To turn your vue.js app into a Cordova app, copy the following to your vue.js app.
 
-.. code-block ::
+.. code-block:: console
 
     cd lcfrontend
     cp myfrontend/platforms/browser/www/cordova.js myfrontend-vue/public
@@ -332,7 +332,7 @@ Update the file :code:`myfrontend-vue/index.html` by adding :code:`cordova.js`.
 
 **myfrontend-vue/index.html:**
 
-.. code-block::
+.. code-block:: html
 
     <!DOCTYPE html>
     <html lang="en">
@@ -363,7 +363,7 @@ Replace the content of :code:`myfrontend-vue/src/main.js` with the following con
 
 **myfrontend-vue/src/main.js:**
 
-.. code-block:: 
+.. code-block:: javascript
 
     import { createApp } from 'vue'
     import App from './App.vue'
@@ -386,13 +386,13 @@ Replace the content of :code:`myfrontend-vue/src/main.js` with the following con
 
 To test if everythin worked, start your vite development server with
 
-.. code-block:: 
+.. code-block:: console
 
     npm run dev
 
 The vue.js default app should load, and you should find the following in the console output:
 
-.. code-block:: 
+.. code-block:: console
 
     Running cordova-browser@6.0.0
 
@@ -405,7 +405,7 @@ You can write frontends for Local Cosmos with any framework you want, or without
 
 First, we will creat eall necessary folders:
 
-.. code-block:: 
+.. code-block:: console
 
     cd lcfrontend/myfrontend-vue
     cd public
@@ -418,7 +418,7 @@ First, we will creat eall necessary folders:
 
 Next, create the file :code:`settings.json` in :code:`myfrontend-vue/public`` and put the following into it.
 
-.. code-block:: 
+.. code-block:: javascript
 
     {
         "frontend" : "MyFrontend",
@@ -438,7 +438,7 @@ Configure vite to build for Cordova
 -----------------------------------
 First, we move cordovas default www folder to not lose it when vite builds.
 
-.. code-block:: 
+.. code-block:: console
 
     cd lcfrontend/myfrontend
     mv www www_default
@@ -448,7 +448,7 @@ Next, we configure Vite to build directly into cordovas www folder.
 
 Open `vite.config.js` and add the following to your config:
 
-.. code-block:: 
+.. code-block:: javascript
 
     build : {
         outDir : '../myfrontend/www'
