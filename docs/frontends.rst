@@ -495,23 +495,24 @@ As a result, we have to adjust `main.js` as follows:
     import I18NextVue from 'i18next-vue';
     import HttpApi from 'i18next-http-backend';
 
-    var settings = {};
 
     function onDeviceReady(event) {
 
         console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
-        fetch('settings.json').then(r => r.json()).then(data => {
+        const app = createApp(App)
 
-            settings = data;
+        fetch('settings.json').then(r => r.json()).then(settingsData => {
 
-            const app = createApp(App)
+            const lcSettings = settingsData;
+
+            app.provide('lcSettings', lcSettings);
 
             app.use(router)
 
             i18next.use(HttpApi).init({
                 language: navigator.language,
-                fallbackLng: settings.PRIMARY_LANGUAGE,
+                fallbackLng: lcSettings.PRIMARY_LANGUAGE,
                 debug: true,
                 ns: ['plain', 'glossarized'],
                 defaultNS: 'glossarized',
