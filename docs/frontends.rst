@@ -501,9 +501,9 @@ As a result, we have to adjust `main.js` as follows:
 
         console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
 
-        fetch('settings.json').then(r => r.text()).then(data => {
+        fetch('settings.json').then(r => r.json()).then(data => {
 
-            settings = JSON.parse(data);
+            settings = data;
 
             const app = createApp(App)
 
