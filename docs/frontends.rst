@@ -32,9 +32,9 @@ The :code:`www` folder will later represent your Apache Cordova www folder, cont
 
 localcosmos folder
 ------------------
-The :code:`localcosmos` folder is the folder where the Local Cosmos App Kit will put all generated contents in.
+The :code:`localcosmos` folder is the folder where the Local Cosmos App Kit will put all generated contents, like identification keys, in.
 Do not put anything into this folder by yourself, unless you are developing using test content.
-During the build phase of your App on Local Cosmos, this folder will be deleted, recreated andu auto-populated
+During the build phase of your App on Local Cosmos, this folder will be deleted, recreated and auto-populated.
 
 online_content folder
 ---------------------
@@ -89,6 +89,7 @@ The settings file of your app. The settings.json file has two functions:
 
     {
         "frontend" : "FRONTEND_NAME",
+        "PRIMARY_LANGUAGE" : "en",
         "version" : "0.1",
         "online_content" : {
             "verbose_template_names" : {
@@ -175,6 +176,8 @@ The settings file of your app. The settings.json file has two functions:
             }
         }
     }
+
+The build process of Local Cosmos adds some settings to this file, like :code:`PRIMARY_LANGUAGE`, according to the settings the app creator made in the app kit.
 
 settings.online_content
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -398,12 +401,12 @@ The vue.js default app should load, and you should find the following in the con
 
 
 Comply with the Local Cosmos frontend structure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------------
 Up to now, we simply used the default vue.js app. We will have to alter the project structure to make it work with Local Cosmos.
 Remember that Local Cosmos is not restricted to vue.js.
 You can write frontends for Local Cosmos with any framework you want, or without using a framework at all.
 
-First, we will creat eall necessary folders:
+First, we will create all necessary folders:
 
 .. code-block:: console
 
@@ -422,7 +425,8 @@ Next, create the file :code:`settings.json` in :code:`myfrontend-vue/public`` an
 
     {
         "frontend" : "MyFrontend",
-        "version" : "0.1"
+        "version" : "0.1",
+        "PRIMARY_LANGUAGE" : "en"
     }
 
 
@@ -430,8 +434,131 @@ Replace :code:`MyFrontend` with the name of your frontend.
 
 
 Copy development data
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 Without data or content, you obviously cannot create a frontend. Download the localcosmos development data and put it into :code:`public/localcosmos`.
+
+
+Localization
+------------
+Local Cosmos frontends require localization, even if your frontend supports only one language. The reason is the **Glossary** feature.
+Every single piece of text can contain a reference to a term in the glossary.
+
+Let's take a look at locale entry with a reference to a glossary entry:
+
+.. code-block:: javascript
+
+    {
+        "brush-like rigid bushes, single filaments": "brush-like <span class=\"glossary_link tap\" action=\"glossary\" data-term=\"cmlnaWQ=\">rigid </span> bushes, single filaments",
+    }
+
+In this example, the word :code:`rigid` occurs in the glossary of the app and thus is wrapped in a :code:`<span>` with the class :code:`glossary-link`.
+
+As a frontend developer, you might want to display plain text without html that refers to the glossary. For example the text on a button should not contain a glossary link.
+Therefore, two files are provided for each localization:
+
+::
+
+    plain.json
+    glossarized.json
+
+:code:`plain.json` contains only plain text **without** any references to the glossary. :code:`glossarized.json` contains the same localization **with** links to glossary entries.
+
+As a result of this structure, a localization library which supports namespacing is required. In this tutorial, `i18next <https://www.i18next.com/>`_  will be used.
+For implementation, `i18next-vue <https://i18next.github.io/i18next-vue/>` will be used.
+
+
+Localization with i18next
+^^^^^^^^^^^^^^^^^^^^^^^^^
+First, download the locale development data and put it into :code:`public/locales`.
+
+Next, install i18next
+
+.. code-block:: console
+
+    cd myfrontend-vue
+    npm install i18next-vue
+    npm install i18next-http-backend
+
+
+As localizations are present as files, the http backend is required to load those files using an xhr request. This makes the loading of the localization asynchronous.
+As a result, we have to adjust `main.js` as follows:
+
+**myfrontend-vue/src/main.js:**
+
+.. code-block:: javascript
+
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import router from './router'
+
+    import i18next from 'i18next';
+    import I18NextVue from 'i18next-vue';
+    import HttpApi from 'i18next-http-backend';
+
+    var settings = {};
+
+    function onDeviceReady(event) {
+
+        console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+
+        fetch('settings.json').then(r => r.text()).then(data => {
+
+            settings = JSON.parse(data);
+
+            const app = createApp(App)
+
+            app.use(router)
+
+            i18next.use(HttpApi).init({
+                language: navigator.language,
+                fallbackLng: settings.PRIMARY_LANGUAGE,
+                debug: true,
+                ns: ['plain', 'glossarized'],
+                defaultNS: 'glossarized',
+                fallbackNS: 'plain', // if app has no glossary, glossarized is not present
+                backend: {
+                    // load from i18next-gitbook repo
+                    loadPath: '/locales/{{lng}}/{{ns}}.json',
+                    crossDomain: true
+                }
+            }).then(() => {
+
+                app.use(I18NextVue, { i18next });
+
+                app.mount('#app')
+
+            });
+
+        });
+
+    }
+
+    document.addEventListener('deviceready', onDeviceReady, false);
+
+
+
+First, we fetch and parse the :code:`settings.json` file because it contains required information about languages.
+We are then making sure that i18next has finished loading before the app is created.
+
+We also made the settings available in the global scope.
+
+
+Fetching glossarized and plain locale entries in your app
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, the glossarized localization will be fetched.
+
+.. code-block:: html
+
+    <template>
+  
+        Glossarized (default): <span v-html="$t('WORD')"></span><br>
+        Plain text: {{ $t('plain:WORD') }}
+    
+    </template>
+
+
+As the glossarized localization might contain a :code:`<span>` element, you always have to fetch it using the :code:`v-html` directive of vue.js.
 
 
 Configure vite to build for Cordova
