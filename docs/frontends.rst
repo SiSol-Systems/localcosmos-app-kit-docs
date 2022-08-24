@@ -574,14 +574,54 @@ First, we move cordovas default www folder to not lose it when vite builds.
 
 Next, we configure Vite to build directly into cordovas www folder.
 
-Open `vite.config.js` and add the following to your config:
+Open :code:`vite.config.js` and add the following to your config:
 
 .. code-block:: javascript
 
     build : {
         outDir : '../myfrontend/www'
-    } 
+    }
 
+
+Run your vue.js app on an Android device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, run the build command
+
+.. code-block:: console
+
+    npm run build
+
+This will build your vue.js app directly into the cordova www folder, as specified in :code:`vite.config.js`.
+If you take a look at the www folder inside of :code:`myfrontend`, you will notice that the cordova specific files and folders we copied over to vue.js earlier are present. These files will be added by cordova automatically, so we have to remove them.
+
+.. code-block:: console
+
+    cd lcfrontend/myfrontend/www
+    rm cordova.js
+    rm cordova_plugins.js
+    rm -r plugins
+    rm -r cordova-js-src
+
+
+Connect your android development device to your PC and check if adb has recognized it. The android Sdk has to be installed.
+
+.. code-block:: console
+
+    adb devices
+
+Your device should be listed.
+
+Finally, add and run the android platform
+
+.. code-block:: console
+
+    cd lcfrontend/myfrontend
+    ../node_modules/cordova/bin/cordova platform add android
+    ../node_modules/cordova/bin/cordova platform run android
+
+
+If everything worked, you will see your Local Cosmos App built with vue.js on your android device.
 
 How to write Online Content and Fact Sheet templates
 ====================================================
