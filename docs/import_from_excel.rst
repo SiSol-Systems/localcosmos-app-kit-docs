@@ -3,7 +3,13 @@ Import from Excel
 *****************
 
 
-.. include:: import_from_excel/basics.rst
-.. include:: import_from_excel/glossary.rst
-.. include:: import_from_excel/nature_guides.rst
-.. include:: import_from_excel/taxon_profiles.rst
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   import_from_excel
+   import_from_excel/basics
+   import_from_excel/glossary
+   import_from_excel/nature_guides
+   import_from_excel/taxon_profiles
+   import_from_excel/images_sheet

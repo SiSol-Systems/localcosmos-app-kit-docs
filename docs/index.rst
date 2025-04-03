@@ -7,12 +7,17 @@ Welcome to LocalCosmos App Kit's documentation!
 ===============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :caption: Contents:
 
-   frontends
    import_from_excel
+   import_from_excel/basics
+   import_from_excel/glossary
+   import_from_excel/taxon_profiles
+   import_from_excel/images_sheet
+..   frontends
+
 
 Indices and tables
 ==================
