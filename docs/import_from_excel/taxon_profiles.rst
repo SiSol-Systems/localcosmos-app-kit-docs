@@ -75,6 +75,7 @@ This means, that the first four cells of row one are fixed cells. You cannot cha
 You can fill the columns from E onwards with the data types you want.
 
 Optional columns are:
+
 * **short_profile**: a short profile of the taxon. You can only have one short_profile column.
 * **text**: a text about the taxon. You can have as many text columns as you want.
 * **image**: an image of the taxon. You can have as many image columns as you want.
@@ -84,6 +85,7 @@ Optional columns are:
 **Row 2: Further definition of the Data types defined in row 1**
 
 Some Data types require further definition in row 2. The following data types require further definition:
+
 * **text**: the text column requires a title. The title is the text that will be displayed in the app. The title is mandatory.
 * **seo**: the SEO column requires further definition in row 2. You have two options: "title" and "meta_description".
 
